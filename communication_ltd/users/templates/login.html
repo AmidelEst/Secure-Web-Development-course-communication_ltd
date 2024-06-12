@@ -1,0 +1,63 @@
+<!-- communication/templates/login.html -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Login</title>
+		{% load static %}
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{% static 'css/styles.css' %}"
+		/>
+		<style>
+			.forgot-password-button {
+				background-color: #e3342f;
+				color: #fff;
+				border: none;
+				padding: 10px 20px;
+				text-align: center;
+				font-size: 16px;
+				margin: 10px;
+				cursor: pointer;
+				border-radius: 4px;
+				text-decoration: none;
+			}
+
+			.forgot-password-button:hover {
+				background-color: #cc1f1a;
+			}
+
+			.button-container {
+				display: flex;
+				justify-content: space-between;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="navbar">
+			<a href="{% url 'home' %}">Home</a>
+			<a href="{% url 'register' %}">Register</a>
+			<a href="{% url 'login' %}">Login</a>
+		</div>
+		<div class="container">
+			<h2>Login</h2>
+			<form method="post">
+				{% csrf_token %} {{ form.as_p }}
+				<div class="button-container">
+					<button type="submit">Login</button>
+					<a
+						href="{% url 'forgot_password' %}"
+						class="forgot-password-button"
+						>Forgot Password</a
+					>
+				</div>
+			</form>
+			{% for message in messages %}
+			<p class="error">{{ message }}</p>
+			{% endfor %}
+		</div>
+		<div class="footer">
+			<p>&copy; 2024 Communication_LTD. All rights reserved.</p>
+		</div>
+	</body>
+</html>
