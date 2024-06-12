@@ -1,4 +1,3 @@
-
 # Communication_LTD Project
 
 ## Overview
@@ -7,9 +6,9 @@ This is a Django-based project for managing customer communications. The project
 
 ## Prerequisites
 
-- MySQL Community Server
-- MySQL Workbench
-- Python 3.12 or later
+-   MySQL Community Server
+-   MySQL Workbench
+-   Python 3.12 or later
 
 ## Installation
 
@@ -18,7 +17,7 @@ Follow these steps to set up the project in your local environment:
 ### 1. Clone the Repository
 
 ```sh
-git clone <url>
+git clone https://github.com/AmidelEst/Comunication_LTD_.git
 ```
 
 ### 2. Set Up Virtual Environment
@@ -102,8 +101,8 @@ deactivate
 
 ## Additional Information
 
-- Access the admin interface at `http://127.0.0.1:8000/admin/` with the superuser credentials.
-- The application home page is accessible at `http://127.0.0.1:8000/`.
+-   Access the admin interface at `http://127.0.0.1:8000/admin/` with the superuser credentials.
+-   The application home page is accessible at `http://127.0.0.1:8000/`.
 
 ## Contact
 
