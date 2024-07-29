@@ -27,7 +27,7 @@ Create a virtual environment and activate it:
 ```sh
 python -m venv .venv
 .venv\Scripts\activate
-cd <project-directory>
+cd cd communication_ltd
 ```
 
 ### 3. Install Dependencies

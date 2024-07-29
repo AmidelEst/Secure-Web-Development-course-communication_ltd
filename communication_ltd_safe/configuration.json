@@ -1,0 +1,12 @@
+{
+	"min_length": 10,
+	"max_failed_attempts": 3,
+	"lockout_period_minutes":2,
+	"complexity": "uppercase,lowercase,numbers,special",
+	"history": 3,
+	"dictionary_check": true,
+	"digits": true,
+	"special_characters": true,
+	"special_characters_list": "!@#$%^&*()_+=-{}[]:;\"'<>,.?/|\\",
+	"common_weak_passwords": ["AdminAdminAdmin$1","1111111111","1234567890","password", "123456", "12345678", "abc123","admin", "qwerty", "monkey", "letmein", "dragon"] 
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+    <style>
+        .name-display {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .name-list {
+            margin-top: 10px;
+        }
+        .name-item {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'change_password' %}">Change Password</a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}" class="logout">Logout</a>
+        {% endif %}
+    </div>
+    <div class="container">
+        <h2>Dashboard</h2>
+        <p>Welcome to your dashboard, {{ user.email }}!</p>
+        
+        <!-- Name input form -->
+        <form method="post" action="{% url 'profile' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+        
+        <!-- Display area for the name list -->
+        <div id="name-display" class="name-display">
+            <div class="name-list">
+                {% for name in new_customer_names %}
+                    <div class="name-item">Customer name: {{ name }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Communication_LTD. All rights reserved.</p>
+    </div>
+</body>
+</html>

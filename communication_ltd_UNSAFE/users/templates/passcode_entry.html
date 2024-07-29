@@ -1,0 +1,31 @@
+<!-- /user/templates/passcode_entry.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enter Passcode</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+</head>
+<body>
+    <div class="navbar">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'register' %}">Register</a>
+        <a href="{% url 'login' %}">Login</a>
+    </div>
+    <div class="container">
+        <h2>Enter Passcode</h2>
+        <form method="post">
+            {% csrf_token %}
+            <label for="reset_token">Passcode:</label>
+            <input type="text" name="reset_token" required />
+            <button type="submit">Submit Passcode</button>
+        </form>
+        {% for message in messages %}
+            <p class="error">{{ message }}</p>
+        {% endfor %}
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Communication_LTD. All rights reserved.</p>
+    </div>
+</body>
+</html>
